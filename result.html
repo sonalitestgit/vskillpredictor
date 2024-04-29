@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Level Distribution Result</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Center the page content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7afdf; /* Light gray background */
+            font-family: Arial, sans-serif; /* Font style */
+            color: #333; /* Text color */
+        }
+
+        /* Main container styling */
+        .container {
+            text-align: center;
+        }
+
+        /* Title styling */
+        h1{
+            color: #6610f2; 
+            margin-top:100px/* Dark blue */
+        }
+        h2{
+            color: #6610f2;
+            margin-top:500px; /* Dark blue */
+        }
+        /* Job recommendations styling */
+        .job-recommendations {
+            margin-bottom: 50px; /* Add some space below */
+            font-weight: bold; /* Make text bold */
+            color: black;
+            font-size: 25px; /* Darker text color */
+        }
+
+        /* Chart container styling */
+        .chart-container {
+            width: 80%; /* Adjust the width as needed */
+            margin-top: 100px; /* Center the container */
+            margin-bottom:50px;
+        }
+
+        /* Style for the chart */
+        #skillChart {
+            width: 60%; /* Occupy full width of the container */
+        }
+        h3 {
+    color: #6610f2; /* Dark blue */
+    font-size: 24px; /* Adjust font size */
+    margin-bottom: 10px; /* Add space below */
+}
+
+.analysis-text {
+    color: #333; /* Dark text color */
+    font-size: 16px; /* Adjust font size */
+    margin-bottom: 20px; /* Add space below */
+}
+
+.explore-link {
+    text-decoration: none; /* Remove underline from link */
+}
+
+.explore-button {
+    padding: 10px 20px; /* Add padding */
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer */
+    transition: background-color 0.3s; /* Add transition effect */
+}
+
+.explore-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Job Recommendations</h2>
+        <p class="job-recommendations">{{ job_recommendations }}</p> <!-- Ensure job recommendations text is properly defined -->
+        <h1>Skill Level Distribution Analysis</h1>
+        
+        <div class="chart-container">
+            <!-- Adjust the width and height of the canvas element -->
+            <canvas id="skillChart" width="100" height="50"></canvas>
+        </div>
+        
+        
+        
+                <h3>Explore Here!</h3>
+                <p class="analysis-text">By conducting an analysis, you can identify the beginner-level skills you need to work on to enhance your skillset. Once you've identified these areas, explore the courses below to further develop your skills and pursue your dream job role.</p>
+                <a href="/explore" class="explore-link">
+                    <button class="explore-button">Explore</button>
+                </a>
+
+            
+        
+        
+        <div id="skillCounts"
+             data-beginner-count="{{ beginner_count }}"
+             data-moderate-count="{{ moderate_count }}"
+             data-advanced-count="{{ advanced_count }}">
+        </div>
+
+        <script>
+            // Retrieve skill counts from data attributes
+            const beginnerCount = parseInt(document.getElementById('skillCounts').getAttribute('data-beginner-count'));
+            const moderateCount = parseInt(document.getElementById('skillCounts').getAttribute('data-moderate-count'));
+            const advancedCount = parseInt(document.getElementById('skillCounts').getAttribute('data-advanced-count'));
+        
+            // Display the skill level distribution chart
+            var ctx = document.getElementById('skillChart').getContext('2d');
+            var skillChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Beginner', 'Moderate', 'Advanced'],
+                    datasets: [{
+                        label: 'Skill Level Distribution',
+                        data: [beginnerCount, moderateCount, advancedCount],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.6)', // Neon blue
+                            'rgba(255, 159, 64, 0.6)', // Neon orange
+                            'rgba(75, 192, 192, 0.6)' // Neon green
+                        ],
+                        borderWidth: 0 // Hide border
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false // Hide x-axis grid lines
+                            },
+                            ticks: {
+                                display: true, // Show x-axis labels
+                                color: 'rgba(0, 0, 0, 0.8)', // Adjust label color
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false // Hide y-axis grid lines
+                            },
+                            ticks: {
+                                display: false // Hide y-axis labels
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

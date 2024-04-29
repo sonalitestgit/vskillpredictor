@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Level Prediction</title>
+    <!-- <style>
+        /* Your custom CSS styles for the button */
+        .predict-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .predict-button:hover {
+            background-color: #0056b3;
+        }
+    </style> -->
+    <link rel="stylesheet" href="static/css/sheet.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Skill Level Predictor</h1>
+    <form id="skillForm" action="/predict" method="post">
+        <div class="skill-inputs">
+        <!-- Add select elements for skills here -->
+        <label for="C">C:</label>
+        <select name="skill1">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+        <label for="Cpp">Cpp:</label>
+        <select name="skill2">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="Java">Java:</label>
+        <select name="skill3">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="Python">Python:</label>
+        <select name="skill4">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="Javascript">Javascript:</label>
+        <select name="skill5">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="Competitive programming (DSA)">Competitive programming (DSA):</label>
+        <select name="skill6">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="Frontend Web Development">Frontend Web Development:</label>
+        <select name="skill7">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="Backend Web Development">Backend Web Development:</label>
+        <select name="skill8">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="Full Stack Web Development">Full Stack Web Development:</label>
+        <select name="skill9">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="Data Analysis and Visualization">Data Analysis and Visualization:</label>
+        <select name="skill10">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="Machine Learning and Artificial Intelligence">Machine Learning and Artificial Intelligence:</label>
+        <select name="skill11">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+        </select>
+
+        <label for="Cloud Computing">Cloud Computing:</label>
+        <select name="skill12">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="DevOps">DevOps:</label>
+        <select name="skill13">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="Android Development">Android Development:</label>
+        <select name="skill14">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="iOS Development">iOS Development:</label>
+        <select name="skill15">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="Cross Platforms (React native, Flutter)">Cross Platforms (React native, Flutter):</label>
+        <select name="skill16">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+
+        <label for="Communication Skill">Communication Skill:</label>
+        <select name="skill17">
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="None">None</option>
+        </select>
+    </div>
+        <!-- Add other skill select elements similarly -->
+        <!-- Repeat for all skills... -->
+<!-- 
+        <input type="submit" value="Predict"> -->
+        <button class="btn has-before predict-button" onclick="submitForm()">Predict</button>
+    </div> 
+    </form>
+    <script>
+        function submitForm() {
+            document.getElementById("skillForm").submit();
+        }
+    </script>
+</body>
+</html>
+
+
+
+
